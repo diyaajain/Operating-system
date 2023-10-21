@@ -25,7 +25,7 @@ bufferItem buffer[BUFFER_SIZE];
 //--------------------------------------------
 void insertItem(bufferItem item) {
     if (counter < BUFFER_SIZE) {
-        buffer[counter] = item;
+        buffer[counter - 1] = item;
         counter++;
         return;
     } else
@@ -38,7 +38,7 @@ void insertItem(bufferItem item) {
 bufferItem removeItem() {
     if (counter > 0) {
         bufferItem itemRem;
-        itemRem = buffer[counter - 1];
+        itemRem = buffer[counter];
         counter--;
         return itemRem;
     } else
